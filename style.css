@@ -188,7 +188,7 @@ h1 span:nth-child(1) {
   right: -50px;
 /*  border: 8px solid white;*/
   border: 5px outset ;
-  border-color: #ffa726 #171717 #171717 #ffa726;
+  border-color: #ffa726 #fff #fff #ffa726;
   box-shadow: 0 0 10px 2px lightgray;
   
 }
