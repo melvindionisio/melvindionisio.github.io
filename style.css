@@ -1,11 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins','sans-serif';
+  font-family: "Poppins", "sans-serif";
   scroll-behavior: smooth;
 }
 
@@ -21,7 +20,7 @@ body {
   position: relative;
   height: 200vh;
   width: 100%;
-  transition: 0.5s;
+  transition: 0.3s;
   left: 0;
 }
 .header {
@@ -30,14 +29,62 @@ body {
   right: 0;
   width: 80px;
   height: 70px;
-  background-color: #202020;
-  /* background-color: transparent; */
-  overflow: hidden;
+  /* background-color: #202020; */
+
+  /* overflow: hidden; */
   transition: 0.4s;
   border-bottom-left-radius: 50%;
   z-index: 99999;
 }
+.menus {
+  position: absolute;
+  top: 80px;
+  right: -100%;
+  height: 185px;
+  width: 80px;
+  /* background-color: #202020; */
+  border-bottom-left-radius: 30%;
+  border-top-left-radius: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: 0.3s;
+  background-color: transparent;
+}
+.menus .contact-info {
+  list-style: none;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+.menus .contact-info .contacts {
+  position: relative;
+  width: 50px;
+  height: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.menus .contact-info .contacts .social {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6rem;
+  color: #32a6b6;
 
+  border-radius: 50%;
+  background-color: #171717;
+  backdrop-filter: blur(5px);
+  outline: none;
+  text-decoration: none;
+}
 .trigger {
   position: absolute;
   top: 25px;
@@ -51,10 +98,10 @@ body {
 
   align-items: center;
   justify-content: space-between;
-  transition: 0.5s;
-  
+  transition: 0.3s;
 }
-.trigger.is-active {
+.trigger.is-active + .menus {
+  right: 0;
 }
 .trigger .burger {
   border-radius: 2px;
@@ -80,7 +127,7 @@ main {
   justify-content: center;
   flex-direction: column;
   align-items: flex-end;
-  
+  box-shadow: 80px 0 0px 0 #202020;
 }
 
 .front {
@@ -154,7 +201,7 @@ h1 span:nth-child(1) {
   color: #404040;
   width: 200px;
 }
-.title-adjust{
+.title-adjust {
   padding-top: 10px;
 }
 .title::after {
@@ -186,11 +233,10 @@ h1 span:nth-child(1) {
   position: absolute;
   top: -50px;
   right: -50px;
-/*  border: 8px solid white;*/
-  border: 5px outset ;
-  border-color: #ffa726 #fff #fff #ffa726;
+  /*  border: 8px solid white;*/
+  border: 5px outset;
+  border-color: #ffa726;
   box-shadow: 0 0 10px 2px lightgray;
-  
 }
 .myDescription p {
   font-weight: 10;
@@ -200,7 +246,7 @@ h1 span:nth-child(1) {
   height: 100%;
   color: #171717;
 }
-.myDescription h1{
+.myDescription h1 {
   font-size: 20px;
   padding: 50px 30px 20px 30px;
 }
@@ -240,35 +286,35 @@ h1 span:nth-child(1) {
   box-shadow: 0 5px 5px 0px lightgray;
   margin-bottom: 25px;
   border-radius: 10px;
-  
+
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  transition: .3s ease;
+  transition: 0.3s ease;
 }
 .card-container .interest-cards:hover {
   box-shadow: 0 10px 10px 0px lightgray;
   transform: translateY(-3%);
   border: 2px solid #ffa726;
-/*  width: 190px;
+  /*  width: 190px;
   height: 240px;
   */
 }
 .card-container .interest-cards a {
-  color: rgba(0,0,0,0.3);
+  color: rgba(0, 0, 0, 0.3);
   transition: 0.2s linear;
   margin: 0 0 20px 0;
 }
 .card-container .interest-cards:hover a {
-  transform: scale(1.5) ;
+  transform: scale(1.5);
   color: #171717;
 }
 .card-container .interest-cards:hover .interest-text {
   transform: scale(1.1);
   font-weight: 600;
-  transition: .3s;
+  transition: 0.3s;
   color: #171717;
 }
 
@@ -282,13 +328,12 @@ h1 span:nth-child(1) {
   transition: 0.3s linear;
 }
 
-
-.card-container .interest-cards:hover::before { 
+.card-container .interest-cards:hover::before {
   top: -65%;
   background-color: #ffa726;
   border-bottom-left-radius: 50%;
   border-bottom-right-radius: 50%;
- } 
+}
 .interest-text {
   font-family: arial;
   font-weight: 400;
