@@ -53,6 +53,7 @@ addTask.addEventListener('click',()=> {
 	
 });
 
+// CLOSING THE POPUP
 closeBtn.addEventListener('click',()=> {
 	popupContainer.style.display = "none";
 
@@ -61,38 +62,43 @@ closeBtn.addEventListener('click',()=> {
 	addTaskPopup.classList.remove('animate');
 });
 
+// CLOSE THE POP UP IF USER CLICKED ANYWHERE OUT OF THE BOX
+const overlay = document.querySelector('.overlay');
+overlay.addEventListener('click', ()=>{
+	overlay.parentElement.style.display = "none";
+});
+
+
 // FOR ADDING A TASK TO THE DOM
 const taskList = document.querySelector('.taskList');
 const addTaskBtn = document.querySelector('.addTask-btn');
 
 
-
-
 addTaskBtn.addEventListener('click', addNewTask);
 function addNewTask(e){
 	addMyTask();
-	editTask();
-		
-	
+	editTask(e);
+
+
 	// REMOVING CLASS ANIMATIONs
 	popupContent.classList.remove('anim');
 	addTaskPopup.classList.remove('animate');
 	
-
 }
 titleInput.addEventListener('keyup', (e)=>{
 	if (e.keyCode === 13 && titleInput.value !== '') {
 		if (descInput.value === '') {
 			descInput.focus();
-		} else { addMyTask(); editTask();}
+		} else { addMyTask(); editTask(e);}
 	} else {
 		document.querySelector('.addTaskPopup').classList.add('alert');
 	}
 });
+
 descInput.addEventListener('keyup', (e)=>{
 	if (e.keyCode === 13 && titleInput.value !== '' && descInput.value !== '') {
 		addMyTask();
-		editTask();
+		editTask(e);
 	}else {
 		document.querySelector('.addTaskPopup').classList.add('alert');
 	}
@@ -179,15 +185,25 @@ selection.addEventListener('click', ()=>{
 	});
 });
 
-function editTask(){
+
+
+
+taskList.addEventListener('click', editTask);
+
+function editTask(e){
 	const editTaskBtn = document.querySelector('.edit-task');
-	editTaskBtn.addEventListener('click', ()=>{
-		document.querySelector('.tsk-title').setAttribute("contenteditable", "true");
-		document.querySelector('.tsk-desc').setAttribute("contenteditable", "true");
-		document.querySelector('.tsk-title').focus();
-		console.log('working');
-	});
+	const actionWrapper = document.querySelector('.action-wrapper');
+	const itemClicked = e.target;
+		if (itemClicked.classList[0] === 'edit-task') {
+			const next = itemClicked.parentElement.parentElement;
+			// const nextT = next.parentNode;
+			next.setAttribute("contenteditable", "true");
+			document.querySelector('.tsk-desc').setAttribute("contenteditable", "true");
+			next.focus();
+		}
+	
 }
+
 
 
 
