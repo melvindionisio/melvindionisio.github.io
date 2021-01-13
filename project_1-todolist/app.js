@@ -82,7 +82,17 @@ const addTask2 = document.getElementById("addTask2");
 // ADD TASK TRIGGER BTN TO OPEN UP THE ADD TASK WINDOW
 addTask.addEventListener("click", () => {
   popupContainer.style.display = "inline";
+
+  // work here later
+  // if (window.screen.availWidth <= 480) {
+  //   addTaskPopup.classList.remove("animate");
+  //   addTaskPopup.classList.add("animateup");
+  // }else{
+  //   addTaskPopup.classList.remove("animateup");
+  //    addTaskPopup.classList.add("animate");
+  // }
   addTaskPopup.classList.add("animate");
+ 
 
   addTaskPopup.addEventListener("animationend", () => {
     popupContent.classList.add("anim");
@@ -91,8 +101,14 @@ addTask.addEventListener("click", () => {
 
 addTask2.addEventListener("click", () => {
   popupContainer.style.display = "inline";
-  addTaskPopup.classList.add("animate");
-
+  // if (window.screen.availWidth <= 480) {
+  //    addTaskPopup.classList.remove("animate");
+  //   addTaskPopup.classList.add("animateup");
+  // }else{
+  //    addTaskPopup.classList.remove("animateup");
+  //    addTaskPopup.classList.add("animate");
+  // }
+   addTaskPopup.classList.add("animate");
   addTaskPopup.addEventListener("animationend", () => {
     popupContent.classList.add("anim");
   });
@@ -294,7 +310,7 @@ function deleteTask() {
     const checked = task.querySelector(".checkbox").checked;
 
     let animDelay = 0;
-    let animDuration = 0.5;
+    let animDuration = 0.4;
     // PUT THE CHECKED TASK INSIDE AN ARRAY
     if (checked) {
       checkedTask.push(task);
