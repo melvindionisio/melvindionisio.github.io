@@ -607,6 +607,7 @@ h1 {
   position: fixed;
   top: 50%;
   left: 50%;
+  bottom: 0;
   transform: translate(-50%, -50%);
 
   height: 300px;
@@ -821,11 +822,10 @@ h1 {
 }
 
 /* MOBILE VERSION */
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 480px) {
 	body {
 		 background: none;
 		 position: relative;
-		 background-color: red;
 	}	
   .container {
     height: 100vh;
@@ -871,22 +871,59 @@ h1 {
 	  backdrop-filter: blur(5px);
 	  height: 70px;
 	  width: 100%;
-	  
-	 // border-top-left-radius: 25px;
-	//  border-top-right-radius: 25px;
+	 /*  
+	 border-top-left-radius: 25px;
+	border-top-right-radius: 25px; */
 	  box-shadow: 0 0 2px 1px rgba(0, 0, 0, .2);
 	}
 	.popup-menus {
-		display: grid;
+		/* display: grid;
 		grid-template-columns: 1fr 1fr 1fr 1fr;
 		grid-template-rows: 1fr;
-		place-items: center;
-		justify-content: center;
+		place-items: center; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
+    place-items: center;
+		justify-content: space-between;
 		align-items: center;
 
 		border: none;
 		margin: 0;
+    padding: 0 30px;
 	}
+  #addTask {
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    height: 70px;
+    width: 70px;  
+    transform: translate(-50%,0);
+    border-radius: 50%;
+    border: 6px solid white;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, .2);
+    background-color: #81c784;
+    color: #1b5e20;
+  }
+  .menus:nth-child(2) {
+    color: #176bef;
+    background-color: rgba(23, 107, 239, 0.3);
+
+    place-self: center start;
+  }
+  .menus:nth-child(3) {
+    color: #f7b529;
+    background-color: rgba(241, 181, 41, 0.3);
+    display: none;
+  }
+  .trash {
+    color: #ff3e30;
+    background-color: rgba(255, 62, 48, 0.3);
+    /* visibility: hidden; */
+    animation: none;
+
+    place-self: center end;
+  }
 	.profile {
 		display: none;
 	}
@@ -895,7 +932,7 @@ h1 {
 	.todoListItems {
 	  grid-area: todoListItems;
 	  display: grid;
-	  grid-template-rows: 120px auto;
+	  grid-template-rows: 110px auto;
 	  width: 100%;
 	  background-color: #fff;
 
@@ -913,6 +950,7 @@ h1 {
 	  z-index: 99;
 
 	}
+
 	.input {
 		place-self: center start;
 		
@@ -940,6 +978,7 @@ h1 {
 		/* to be deleted */
 	  height: 100%;
 	  overflow: scroll;	
+	  overflow-x: hidden;
 	 
 	}
 
@@ -949,7 +988,7 @@ h1 {
 
 		/* to be deleted */
 		position: absolute;
-		top: 40%;
+		top: 45%;
 		left: 50%;
 		transform: translate(-50%, -50%);
 		display: flex;
@@ -1031,6 +1070,230 @@ h1 {
 	/* background-color: #82c784; */
 	background-color: #1de9b6;
 	}
+  .edit-task {
+    display: none;
+  }
+  .action-wrapper {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+  }
 
+
+
+  /* HERE TO CONTINUE */
+
+
+  .popup-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: none;
+    z-index: 100;
+  }
+  .addTaskPopup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, -50%);
+
+    height: 350px;
+    width: 95%;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 3px 5px 3px rgba(0, 0, 0, 0.2);
+
+    /* background-color: #82c784;  */
+    /* backdrop-filter: blur(10px); */
+    font-family: Montserrat-Regular;
+    overflow: hidden;
+  }
+  .addTaskPopup.animate {
+    animation: 0.1s windowAnimate ease-in-out;
+  }
+  @keyframes windowAnimate {
+    0% {
+      opacity: 0;
+      height: 0;
+      width: 0;
+    }
+    60% {
+      opacity: 0.6;
+      height: 330px;
+      width: 530px;
+    }
+    100% {
+      opacity: 1;
+      height: 300px;
+      width: 500px;
+    }
+  }
+
+  /* TO BE MODIFIED LATER */
+
+  .addTaskPopup::before {
+    /* content: "Please add text on the task"; */
+    height: 50px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 20px;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    z-index: -10;
+    color: red;
+    transition: 0.1s;
+    padding-top: 5px;
+    text-align: center;
+  }
+  .alert::before {
+    border: 1px solid red;
+    top: -20px;
+  }
+  .popupHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 20%;
+    padding-top: 5px;
+    /* background-color: #80cbc4; */
+    /* background-color: rgba(23, 156, 82, 0.4); */
+    background-color: #fff;
+    border-radius: 20px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 30px;
+  }
+  .popupHeader .popup-title {
+    font-size: 2rem;
+    color: #505050;
+    /* color: #ff6f47; */
+    font-family: Montserrat-Bold;
+    text-align: center;
+    width: 95%;
+    padding-left: 25px;
+  }
+
+  .popupHeader .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #ddd;
+    color: #212121;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border: none;
+    outline: none;
+  }
+
+  .popupHeader .close-btn:hover {
+    background-color: #ef9e9a;
+    color: #ff3e30;
+    transform: scale(1.2);
+  }
+  .popupContent {
+    height: 80%;
+    display: grid;
+    grid-template-rows: 1fr 1fr 0.5fr;
+    padding: 20px;
+
+    padding-bottom: 20px;
+    opacity: 0;
+    background-color: transparent;
+    /* border-top-left-radius: 20px;
+      border-top-right-radius: 20px; */
+  }
+  .popupContent.anim {
+    opacity: 1;
+    animation: 0.1s opacityAnim ease-in-out;
+  }
+  @keyframes opacityAnim {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .taskInputBoxes {
+    display: grid;
+    grid-template-rows: 0.4fr 1fr;
+    align-items: center;
+    height: 100%;
+  }
+
+  .task-title {
+    font-size: 1.5rem;
+  }
+  .taskInputBoxes .title-input,
+  .taskInputBoxes .desc-input {
+    border: none;
+    border-bottom: 1px solid lightgray;
+    outline: none;
+    font-family: Montserrat-Medium;
+    padding: 10px;
+    transition: border 0.2s ease-in-out;
+  }
+  .title-input.clicked,
+  .desc-input.clicked {
+    border-bottom: 1px solid mediumspringgreen;
+  }
+  .taskInputBoxes .title-input {
+    font-size: 2rem;
+  }
+  .title-input::placeholder {
+    opacity: 0.7;
+    color: red;
+    font-size: 1.5rem;
+  }
+  .desc-input::placeholder {
+    color: red;
+    opacity: 0.7;
+  }
+  .taskInputBoxes .desc-input {
+    font-size: 1.5rem;
+  }
+
+  .popupContent .addTask-btn {
+    place-self: center;
+    height: 30px;
+    width: 60%;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    color: #179c52;
+
+    background-color: #ddd;
+    font-family: Montserrat-Regular;
+    font-weight: bold;
+
+    transition: transform 0.1s ease;
+    transform: scale(1);
+  }
+
+  .popupContent .addTask-btn:hover {
+    color: #505050;
+    /* background-color: #82c784; */
+    background-color: rgba(23, 156, 82, 0.4);
+    transform: scale(1.05);
+  }
+
+  
+  .overlay {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(5px);
+    z-index: -1;
+  }
 
 }
