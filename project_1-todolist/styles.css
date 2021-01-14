@@ -142,7 +142,7 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: rgba(255, 255, 255, 1);
+	background-color: rgba(255, 255, 255, 0.5);
 	backdrop-filter: blur(20px);
 	font-family: Montserrat-SemiBold;
 	color: #263238;
@@ -855,7 +855,7 @@ h1 {
   }
   .trigger {
     position: absolute;
-    top: 40px;
+    top: 45px;
     right: 40px;
     height: 20px;
     width: 30px;
@@ -1102,14 +1102,14 @@ h1 {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: rgba(255, 255, 255, 0.5);
+	background-color: rgba(255, 255, 255, 1);
 	/* backdrop-filter: blur(20px); */
 	font-family: Montserrat-SemiBold;
 	color: #263238;
 	font-size: 1.2rem;	
 	background-color: white;	
 	z-index: 100;
-  background-color: transparent;
+  /*background-color: transparent;*/
 	}
 
 	/* First Container */
