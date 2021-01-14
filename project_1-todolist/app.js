@@ -1,3 +1,15 @@
+// TO BE MODIFIED LATER
+const header = document.querySelector('.header');
+const button = document.querySelector('.trigger');
+
+
+const height = window.screen.availHeight;
+button.addEventListener('click', event =>{
+    button.classList.toggle('is-active');
+});
+
+
+
 // THIS NOTE WILL SHOW UP WHENEVER THE TASK LIST IS EMPTY
 warningNote();
 
@@ -132,6 +144,11 @@ closeBtn.addEventListener("click", () => {
 const overlay = document.querySelector(".overlay");
 overlay.addEventListener("click", () => {
   overlay.parentElement.style.display = "none";
+
+  titleInput.value = "";
+  descInput.value = "";
+  titleInput.removeAttribute("placeholder");
+  descInput.removeAttribute("placeholder");
 });
 
 // FOR ADDING A TASK TO THE DOM
