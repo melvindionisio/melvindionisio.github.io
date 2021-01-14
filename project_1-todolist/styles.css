@@ -142,7 +142,7 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: rgba(255, 255, 255, 0.5);
+	background-color: rgba(255, 255, 255, 1);
 	backdrop-filter: blur(20px);
 	font-family: Montserrat-SemiBold;
 	color: #263238;
@@ -855,7 +855,7 @@ h1 {
   }
   .trigger {
     position: absolute;
-    top: 45px;
+    top: 40px;
     right: 40px;
     height: 20px;
     width: 30px;
