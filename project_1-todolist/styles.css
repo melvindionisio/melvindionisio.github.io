@@ -134,6 +134,9 @@ body {
   border-left: 2px solid white;
 	border-top: 1px solid white;	
 }
+.darkmodebody {
+  display: none;
+}
 .title-bar {
 	grid-area: titleBar;
 	display: flex;
@@ -832,6 +835,7 @@ h1 {
 	body {
 		 background: none;
 		 position: relative;
+     background-color: white;
 	}	
 
    /* NEW */
@@ -868,7 +872,6 @@ h1 {
     height: 4px;
     width: 100%;
     background-color: #32a6b6;
-    background-color: #176bef;
     transition: 0.3s;
   }
   .burger:nth-child(2) {
@@ -898,20 +901,94 @@ h1 {
     background-color: white;
     z-index: 100;
     display: flex;
-    justify-content: center;
-    align-items: start;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-    transition: box-shadow .2s ease-in .2s, right .3s linear;
+    transition: box-shadow .1s linear .3s, right .3s linear;
+    padding-top: 100px;
     /* transition: ; */
-
   }
+
     .trigger.is-active + .overlay2 {
       right: 0;
-      box-shadow: -30vw 0 0 0 rgba(0, 0, 0, .5);
+      box-shadow: -30vw 0 0px 0 rgba(0, 0, 0, .2);
+    
    }
+    .darkmode {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: #222;
+      height: 100%;
+      width: 100%;
+      clip-path: circle(1% at 50% 16%);
+      transition: clip-path .3s ease-in-out;
+    }
+
+   label {
+    /* height: 50px;
+    width: 100px; */
+    position: relative;
+    margin: 5px 0;
+    cursor: pointer;
+
+   }
+   label input {
+    appearance: none;
+    display: none;
+   }
+   label span {
+    position: relative;
+    display: block;
+    width: 80px;
+    height: 40px;
+    background-color: #ccc;
+    border-radius: 40px;
+    box-shadow: inset 0 2px 15px rgba(255,255,255,.2),
+                inset 0 2px 2px rgba(255,255,255,0.2),
+                inset 0 -1px 1px rgba(255,255,255,0.2);
+    transition: .3s;
+     border:  1px solid #ccc; 
+   }
+   label input:checked ~ span {
+    position: relative;
+    display: block;
+    width: 80px;
+    height: 40px;
+    background-color: #222;
+    border-radius: 40px;
+    box-shadow: inset 0 2px 15px rgba(0,0,0,0.2),
+                inset 0 2px 2px rgba(0,0,0,0.2),
+                inset 0 -1px 1px rgba(0,0,0,0.2);
+       border:  1px solid #444; 
+   }
+  
+   label .indicator {
+     position: absolute;
+      top: 0;
+      left: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      transform: scale(0.9);
+      transition: 0.5s;
+     
+       background: linear-gradient(to bottom, #ccc, #aaa);
+       box-shadow: 0 2px 5px rgba(255,255,255, .5),
+                  inset 0 1px 1px rgba(0,0,0,.1);
+
+   }
+    label input:checked ~ .indicator {
+      background: linear-gradient(to bottom, #444, #222);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, .5),
+                  inset 0 1px 1px rgba(255,255,255,.1);
+      left: 40px;
+   }
+
    .profile-container {
     position: relative;
-    height: 500px;
+    height: 300px;
     width: 200px;
     display: flex;
     flex-direction: column;
@@ -926,7 +1003,7 @@ h1 {
    .profile-container hr {
     width: 60%;
     margin-bottom: 50px;
-    background-color: #212121;
+    background-color: #222;
    }
 
   .profile2 {
@@ -988,6 +1065,9 @@ h1 {
     outline: none;
     text-decoration: none;
   }
+  .menu .contact-info .contacts .social.on{
+    background-color: #444;
+  }
 
 /* NEW */
   .container {
@@ -1006,6 +1086,17 @@ h1 {
  	 border-left: 0px solid white;
 	border-top: 0px solid white;
   }
+  .darkmodebody {
+    display: inline;
+    position: absolute;
+    background-color: #222;
+    height: 100%;
+    width: 100%;
+    clip-path: circle(2% at 110% 15%);
+
+    transition: clip-path .3s ease-in-out;
+  }
+
   .title-bar {
 	grid-area: titleBar;
 	display: flex;
@@ -1018,6 +1109,7 @@ h1 {
 	font-size: 1.2rem;	
 	background-color: white;	
 	z-index: 100;
+  background-color: transparent;
 	}
 
 	/* First Container */
@@ -1112,6 +1204,8 @@ h1 {
 	  border-bottom-right-radius: 40px;
 	  z-index: 99;
 
+    background-color: transparent;
+
 	}
 
 	.input {
@@ -1135,6 +1229,7 @@ h1 {
 
 		/* to be deleted */
 	  position: relative;
+    background-color: transparent;
 	  
 	}
 	.containerSupp {
@@ -1142,6 +1237,7 @@ h1 {
 	  height: 100%;
 	  overflow: scroll;	
 	  overflow-x: hidden;
+    background-color: transparent;
 	 
 	}
 
@@ -1174,6 +1270,7 @@ h1 {
 		user-select: none;
 		background-color: white;
 		padding: 10px;	
+    background-color: transparent;
 	}
 	#addTask2 {
 
@@ -1186,6 +1283,7 @@ h1 {
 	 font-size: 1.8rem;
 	
 	 border: 2px dashed #aaa;
+
 
 	}
 	.add {
