@@ -432,7 +432,7 @@ const darkmodeBody = document.querySelector('.darkmodebody');
 
 darkmodeBtn.addEventListener('change', ()=>{
   if (darkmodeBtn.checked) {
-    darkmodeFX.style.clipPath = "circle(130% at 50% 17%)";
+    darkmodeFX.style.clipPath = "circle(130% at 50% 16%)";
     darkmodeBody.style.clipPath = "circle(140% at 110% 15%)";
     document.querySelector('.profile-container').style.color="white";
     document.querySelector('#profile-pic-mobile').style.borderColor="#333";
@@ -443,7 +443,7 @@ darkmodeBtn.addEventListener('change', ()=>{
     document.querySelector('#addTask2').style.backgroundColor="#444";
 
   }else{
-     darkmodeFX.style.clipPath = "circle(1% at 50% 17%)";
+     darkmodeFX.style.clipPath = "circle(0% at 50% 16%)";
      darkmodeBody.style.clipPath = "circle(2% at 110% 15%)";
      document.querySelector('.profile-container').style.color="#222";
      document.querySelector('.title-bar').style.backgroundColor="white";
