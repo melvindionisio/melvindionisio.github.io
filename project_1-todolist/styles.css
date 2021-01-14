@@ -922,7 +922,7 @@ h1 {
       background-color: #222;
       height: 100%;
       width: 100%;
-      clip-path: circle(1% at 50% 16%);
+      clip-path: circle(0% at 50% 16%);
       transition: clip-path .3s ease-in-out;
     }
 
