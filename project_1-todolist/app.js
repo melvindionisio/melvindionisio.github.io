@@ -1,18 +1,23 @@
 // TO BE MODIFIED LATER
-const header = document.querySelector('.header');
-const button = document.querySelector('.trigger');
+var header = document.querySelector('.header');
+var button = document.querySelector('.trigger');
 
 
-const height = window.screen.availHeight;
+var count = 0;
+var height = window.screen.availHeight;
 button.addEventListener('click', event =>{
     button.classList.toggle('is-active');
+    
 });
+
+
 
 
 
 // THIS NOTE WILL SHOW UP WHENEVER THE TASK LIST IS EMPTY
 warningNote();
 
+// GETTING THE CURRENT TIME
 function getTime(){
 	var myTime = setTimeout('displayTime()', 1000);
 }
@@ -39,9 +44,11 @@ searchBox.addEventListener("focus", () => {
   searchBox.classList.add("open");
 });
 searchBox.addEventListener("blur", () => {
-  searchBox.classList.remove("open");
-  searchBox.removeAttribute("placeholder");
-  searchBox.value = "";
+  if (searchBox.value === '') {
+     searchBox.classList.remove("open");
+     searchBox.removeAttribute("placeholder");
+  }
+ 
 });
 
 
@@ -417,3 +424,31 @@ function refresh(){
 
 	}
 }
+
+// DARKMODE MODIFICATION HERE!
+const darkmodeBtn = document.querySelector('#darkmode');
+const darkmodeFX = document.querySelector('.darkmode');
+const darkmodeBody = document.querySelector('.darkmodebody');
+
+darkmodeBtn.addEventListener('change', ()=>{
+  if (darkmodeBtn.checked) {
+    darkmodeFX.style.clipPath = "circle(130% at 50% 17%)";
+    darkmodeBody.style.clipPath = "circle(140% at 110% 15%)";
+    document.querySelector('.profile-container').style.color="white";
+    document.querySelector('#profile-pic-mobile').style.borderColor="#333";
+
+    document.querySelector('.title-bar').style.color="white";
+    document.querySelector('.app-title').style.color="white";
+    document.querySelector('#addTask2').style.backgroundColor="#444";
+
+  }else{
+     darkmodeFX.style.clipPath = "circle(1% at 50% 17%)";
+     darkmodeBody.style.clipPath = "circle(2% at 110% 15%)";
+     document.querySelector('.profile-container').style.color="#222";
+     document.querySelector('#profile-pic-mobile').style.borderColor="white";
+      document.querySelector('.title-bar').style.color="#222";
+      document.querySelector('.app-title').style.color="#222";
+      document.querySelector('#addTask2').style.backgroundColor="#eee";
+      
+  }
+});
