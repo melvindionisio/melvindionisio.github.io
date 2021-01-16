@@ -1,10 +1,10 @@
 // TO BE MODIFIED LATER
-var header = document.querySelector('.header');
-var button = document.querySelector('.trigger');
+let header = document.querySelector('.header');
+let button = document.querySelector('.trigger');
 
 
-var count = 0;
-var height = window.screen.availHeight;
+let count = 0;
+let height = window.screen.availHeight;
 button.addEventListener('click', event =>{
     button.classList.toggle('is-active');
     
@@ -110,6 +110,36 @@ addTask.addEventListener("click", () => {
   //   addTaskPopup.classList.remove("animateup");
   //    addTaskPopup.classList.add("animate");
   // }
+
+
+    // DARKMODE HERE
+  if (window.screen.availWidth <= 480) {
+     if (darkmodeBtn.checked) {
+      addTaskPopup.style.backgroundColor="#222";
+     addTaskPopup.style.color="white";
+     document.querySelector('.popup-title').style.color = "white";
+     document.querySelector('.title-input').style.color = "white";
+     document.querySelector('.desc-input').style.color = "white";
+
+  }else{
+    addTaskPopup.style.backgroundColor="white";
+    addTaskPopup.style.color="#222";
+     document.querySelector('.popup-title').style.color = "#222";
+     document.querySelector('.title-input').style.color = "#222";
+     document.querySelector('.desc-input').style.color = "#222";
+
+
+      }
+  }else{
+    addTaskPopup.style.backgroundColor="white";
+    addTaskPopup.style.color="#222";
+     document.querySelector('.popup-title').style.color = "#222";
+     document.querySelector('.title-input').style.color = "#222";
+     document.querySelector('.desc-input').style.color = "#222";
+
+
+  }
+
   addTaskPopup.classList.add("animate");
  
 
@@ -127,7 +157,39 @@ addTask2.addEventListener("click", () => {
   //    addTaskPopup.classList.remove("animateup");
   //    addTaskPopup.classList.add("animate");
   // }
+
+  // DARKMODE HERE
+  if (window.screen.availWidth <= 480) {
+     if (darkmodeBtn.checked) {
+      addTaskPopup.style.backgroundColor="#222";
+     addTaskPopup.style.color="white";
+     document.querySelector('.popup-title').style.color = "white";
+     document.querySelector('.title-input').style.color = "white";
+     document.querySelector('.desc-input').style.color = "white";
+
+
+
+  }else{
+    addTaskPopup.style.backgroundColor="white";
+    addTaskPopup.style.color="#222";
+     document.querySelector('.popup-title').style.color = "#222";
+     document.querySelector('.title-input').style.color = "#222";
+     document.querySelector('.desc-input').style.color = "#222";
+
+      }
+  }else{
+    addTaskPopup.style.backgroundColor="white";
+    addTaskPopup.style.color="#222";
+     document.querySelector('.popup-title').style.color = "#222";
+     document.querySelector('.title-input').style.color = "#222";
+     document.querySelector('.desc-input').style.color = "#222";
+
+
+
+  }
+ 
    addTaskPopup.classList.add("animate");
+
   addTaskPopup.addEventListener("animationend", () => {
     popupContent.classList.add("anim");
   });
@@ -186,6 +248,7 @@ function addNewTask(e) {
       });
     }
   } else {
+   
     addMyTask();
     // editTask(e);
     
@@ -272,6 +335,15 @@ function addMyTask() {
   newTask.classList.add("task-anim");
 
   tasksCounter();
+   if (window.screen.availWidth <= 480){
+    if (darkmodeBtn.checked) {
+       newTask.classList.add('invert');
+    }
+    else{
+     newTask.classList.remove('invert');
+    }
+    }
+  
 
 }
 
@@ -421,7 +493,6 @@ function refresh(){
 					task.style.animation = "none";
 				});
 		  }, reuseTimer * 1000);
-
 	}
 }
 
@@ -431,26 +502,46 @@ const darkmodeFX = document.querySelector('.darkmode');
 const darkmodeBody = document.querySelector('.darkmodebody');
 
 darkmodeBtn.addEventListener('change', ()=>{
-  if (darkmodeBtn.checked) {
-    darkmodeFX.style.clipPath = "circle(130% at 50% 16%)";
-    darkmodeBody.style.clipPath = "circle(140% at 110% 15%)";
-    document.querySelector('.profile-container').style.color="white";
-    document.querySelector('#profile-pic-mobile').style.borderColor="#333";
+    if (window.screen.availWidth <= 480) {
+         if (darkmodeBtn.checked) {
+           darkmodeFX.style.clipPath = "circle(130% at 50% 15%)";
+            darkmodeBody.style.clipPath = "circle(140% at 110% 15%)";
+            darkmodeBody.style.display = "inline";
+            document.querySelector('.profile-container').style.color="white";
+            document.querySelector('#profile-pic-mobile').style.borderColor="#333";
+            document.querySelector('#addTask2').style.backgroundColor="#444";
+            document.querySelector('.title-bar').style.color="white";
+            document.querySelector('.app-title').style.color="white";
+            
+            document.querySelector('.addOutside').style.borderColor="#505050";
+            document.querySelectorAll('.tasks').forEach((dark)=>{
+              dark.classList.add('invert');
+            });
+             
+          }else{
+             darkmodeFX.style.clipPath = "circle(0% at 50% 16%)";
+           darkmodeBody.style.clipPath = "circle(0% at 110% 16%)";
+           document.querySelector('.profile-container').style.color="#222";
+           document.querySelector('#profile-pic-mobile').style.borderColor="white";
+           document.querySelector('#addTask2').style.backgroundColor="rgba(238,238,238)";
+            document.querySelector('.title-bar').style.color="#222";
+            document.querySelector('.app-title').style.color="#222";
 
-    document.querySelector('.title-bar').style.color="white";
-    document.querySelector('.title-bar').style.backgroundColor="transparent";
-    document.querySelector('.app-title').style.color="white";
-    document.querySelector('#addTask2').style.backgroundColor="#444";
+             document.querySelector('.addOutside').style.borderColor="white";
+             document.querySelectorAll('.tasks').forEach((dark)=>{
+              dark.classList.remove('invert');
+            });
+              }
+          }
+      else{
+          document.querySelector('#addTask2').style.backgroundColor="#ddd";
+          document.querySelector('.title-bar').style.color="#222";
+          document.querySelector('.app-title').style.color="#222";
+          document.querySelectorAll('.tasks').forEach((dark)=>{
+              dark.classList.remove('invert');
+            });
 
-  }else{
-     darkmodeFX.style.clipPath = "circle(0% at 50% 16%)";
-     darkmodeBody.style.clipPath = "circle(2% at 110% 15%)";
-     document.querySelector('.profile-container').style.color="#222";
-     document.querySelector('.title-bar').style.backgroundColor="white";
-     document.querySelector('#profile-pic-mobile').style.borderColor="white";
-      document.querySelector('.title-bar').style.color="#222";
-      document.querySelector('.app-title').style.color="#222";
-      document.querySelector('#addTask2').style.backgroundColor="#eee";
-      
-  }
+
+      }
+   
 });
