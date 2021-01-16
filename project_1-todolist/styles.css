@@ -142,7 +142,7 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: rgba(255, 255, 255, 0.5);
+	background-color: rgba(255, 255, 255, .5);
 	backdrop-filter: blur(20px);
 	font-family: Montserrat-SemiBold;
 	color: #263238;
@@ -625,7 +625,7 @@ h1 {
   border-radius: 20px;
   box-shadow: 0 3px 5px 0px rgba(0, 0, 0, 0.2);
 
-  /* background-color: #82c784;	 */
+  /* background-color: transparent ;	 */
   /* backdrop-filter: blur(10px); */
   font-family: Montserrat-Regular;
   overflow: hidden;
@@ -747,6 +747,7 @@ h1 {
 
 .task-title {
   font-size: 1.5rem;
+  
 }
 .taskInputBoxes .title-input,
 .taskInputBoxes .desc-input {
@@ -756,6 +757,7 @@ h1 {
   font-family: Montserrat-Medium;
   padding: 10px;
   transition: border 0.2s ease-in-out;
+  background-color: transparent;
 }
 .title-input.clicked,
 .desc-input.clicked {
@@ -855,7 +857,7 @@ h1 {
   }
   .trigger {
     position: absolute;
-    top: 45px;
+    top: 40px;
     right: 40px;
     height: 20px;
     width: 30px;
@@ -868,10 +870,11 @@ h1 {
     transition: 0.3s;
   }
   .trigger .burger {
-    border-radius: 2px;
+    border-radius: 10px;
     height: 4px;
     width: 100%;
     background-color: #32a6b6;
+    /* background-color: mediumspringgreen; */
     transition: 0.3s;
   }
   .burger:nth-child(2) {
@@ -905,7 +908,7 @@ h1 {
     align-items: center;
     flex-direction: column;
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-    transition: box-shadow .1s linear .3s, right .3s linear;
+    transition: box-shadow .2s ease-in .3s, right .3s linear;
     padding-top: 100px;
     /* transition: ; */
   }
@@ -913,7 +916,7 @@ h1 {
     .trigger.is-active + .overlay2 {
       right: 0;
       box-shadow: -30vw 0 0px 0 rgba(0, 0, 0, .2);
-    
+
    }
     .darkmode {
       position: absolute;
@@ -1087,13 +1090,12 @@ h1 {
 	border-top: 0px solid white;
   }
   .darkmodebody {
-    display: inline;
+    display: none;
     position: absolute;
     background-color: #222;
     height: 100%;
     width: 100%;
     clip-path: circle(2% at 110% 15%);
-
     transition: clip-path .3s ease-in-out;
   }
 
@@ -1109,7 +1111,7 @@ h1 {
 	font-size: 1.2rem;	
 	background-color: white;	
 	z-index: 100;
- /* background-color: transparent;*/
+  background-color: transparent;
 	}
 
 	/* First Container */
@@ -1158,7 +1160,10 @@ h1 {
     border: 5px solid white;
     box-shadow: 0 0 2px 1px rgba(0, 0, 0, .2);
     background-color: #81c784;
-    color: #1b5e20;
+   
+    /* color: #1b5e20; */
+    color: #222;
+    font-size: 2.0rem;
   }
   .menus:nth-child(2) {
     color: #176bef;
@@ -1321,6 +1326,10 @@ h1 {
 	  overflow: hidden;
 	  outline: none;
 	}
+  .tasks.invert {
+   color: white;
+   background-color: #252525;
+  }
 	.tasks::before {
 	content: "";
 	position: absolute;
@@ -1374,6 +1383,8 @@ h1 {
     /* backdrop-filter: blur(10px); */
     font-family: Montserrat-Regular;
     overflow: hidden;
+    /* background-color: transparent; */
+
   }
   .addTaskPopup.animate {
     animation: 0.1s windowAnimate ease-in-out;
@@ -1387,12 +1398,12 @@ h1 {
     60% {
       opacity: 0.6;
       height: 330px;
-      width: 530px;
+      width: 90%;
     }
     100% {
       opacity: 1;
       height: 300px;
-      width: 500px;
+      width: 95%;
     }
   }
 
@@ -1425,14 +1436,14 @@ h1 {
     padding-top: 5px;
     /* background-color: #80cbc4; */
     /* background-color: rgba(23, 156, 82, 0.4); */
-    background-color: #fff;
+    background-color: transparent;
     border-radius: 20px;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 30px;
   }
   .popupHeader .popup-title {
     font-size: 2rem;
-    color: #505050;
+    color: #222;
     /* color: #ff6f47; */
     font-family: Montserrat-Bold;
     text-align: center;
