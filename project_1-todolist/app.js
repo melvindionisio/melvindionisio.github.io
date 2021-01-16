@@ -514,7 +514,7 @@ darkmodeBtn.addEventListener('change', ()=>{
             document.querySelector('.app-title').style.color="white";
             
             document.querySelector('.addOutside').style.borderColor="#505050";
-            document.querySelectorAll('.burger').style.backgroundColor="white";
+           
             document.querySelectorAll('.tasks').forEach((dark)=>{
               dark.classList.add('invert');
             });
