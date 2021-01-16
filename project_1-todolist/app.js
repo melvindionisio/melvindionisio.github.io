@@ -514,6 +514,7 @@ darkmodeBtn.addEventListener('change', ()=>{
             document.querySelector('.app-title').style.color="white";
             
             document.querySelector('.addOutside').style.borderColor="#505050";
+            document.querySelectorAll('.burger').forEach((burger)=>{ burger.style.backgroundColor="white";}
             document.querySelectorAll('.tasks').forEach((dark)=>{
               dark.classList.add('invert');
             });
@@ -528,6 +529,7 @@ darkmodeBtn.addEventListener('change', ()=>{
             document.querySelector('.app-title').style.color="#222";
 
              document.querySelector('.addOutside').style.borderColor="white";
+document.querySelectorAll('.burger').forEach((burger)=>{ burger.style.backgroundColor="#222";}
              document.querySelectorAll('.tasks').forEach((dark)=>{
               dark.classList.remove('invert');
             });
@@ -537,6 +539,7 @@ darkmodeBtn.addEventListener('change', ()=>{
           document.querySelector('#addTask2').style.backgroundColor="#ddd";
           document.querySelector('.title-bar').style.color="#222";
           document.querySelector('.app-title').style.color="#222";
+document.querySelectorAll('.burger').forEach((burger)=>{ burger.style.backgroundColor="#222";}
           document.querySelectorAll('.tasks').forEach((dark)=>{
               dark.classList.remove('invert');
             });
