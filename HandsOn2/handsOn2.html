@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>HandsOn 2</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+		<form method="GET" action="http://wwww.randyconnolly.com/tests/process.php" >
+			<fieldset>
+				<legend>Advanced Art Work Search</legend>
+				
+				<div id="searchBox">
+					
+					<input name="search" type="text" placeholder="Search titles">
+						<label>Subject:</label>
+
+						<input name="subject" type="radio" value="0">
+						<label>History</label>
+						
+						<input name="subject" type="radio" value="1">
+						<label>Person</label>
+						
+						<input name="subject" type="radio" value="2">
+						<label>Landscape</label>
+
+						<select name="filter" id="" >
+							<option value="0">Select Genre:</option>
+							<option value="1">Baroque</option>
+							<option value="2">Renaissance</option>
+							<option value="3">Realism</option>
+						</select>
+						<input name="filter" type="button" value="Filter">	
+				</div>
+				<div id="settingsBox">
+					<select name="action" id="">
+						<option value="0">Bulk Action: </option>
+						<option value="1">Archive</option>
+						<option value="2">Edit</option>
+						<option value="3">Delete</option>
+						<option value="4">Collection</option>
+					</select>
+					<input  type="submit" value="Apply to All" >
+				</div>
+
+				<!-- Painting Cntainer -->
+				<div id="paintingBox">
+					<table>
+						<caption>Paintings</caption>
+						<thead>
+							<tr>
+								<th></th>
+								<th>Title</th>
+								<th>Artist</th>
+								<th>Year</th>
+								<th>Genre</th>
+								<th>Actions</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="count">
+									<input type="checkbox" class="checkbox" name="index[]" value="10">
+									<img src="Death-of-Marat.jpg" alt="" class="painting-pic">
+								</td>
+								<td>Death of Marat</td>
+								<td>David, Jacques-Louis</td>
+								<td>1793</td>
+								<td>Romanticiscm</td>
+								<td>
+										<button><a href="#"></a><img src="archive.png" alt=""></button>
+										<button><a href="#"></a><img src="edit.png" alt=""></button>
+										<button><a href="#"></a><img src="delete.png" alt=""></button>
+										<button><a href="#"></a><img src="collection.png" alt=""></button>
+								</td>
+							</tr>
+							<tr>
+								<td class="count">
+									<input type="checkbox" class="checkbox" name="index[]" value="20">
+									<img src="Portrait-of-Eleonor-of-Toledo.jpg" alt="" class="painting-pic">
+								</td>
+								<td>Portrait of Eleonor of Toledo</td>
+								<td>Bronzino, Agnolo</td>
+								<td>1545</td>
+								<td>Mannerism</td>
+								<td>
+									<button><a href="#"></a><img src="archive.png" alt=""></button>
+									<button><a href="#"></a><img src="edit.png" alt=""></button>
+									<button><a href="#"></a><img src="delete.png" alt=""></button>
+									<button><a href="#"></a><img src="collection.png" alt=""></button>
+								</td>
+							</tr>
+							<tr>
+								<td class="count">
+									<input type="checkbox" class="checkbox" name="index[]" value="30">
+									<img src="Liberty-leading-the-people.jpg" alt="" class="painting-pic">
+								</td>
+								<td>Liberty Leading the People</td>
+								<td>Delacroix, Eugene</td>
+								<td>1830</td>
+								<td>Romanticiscm</td>
+								<td>
+									<button><a href="#"></a><img src="archive.png" alt=""></button>
+									<button><a href="#"></a><img src="edit.png" alt=""></button>
+									<button><a href="#"></a><img src="delete.png" alt=""></button>
+									<button><a href="#"></a><img src="collection.png" alt=""></button>
+								</td>
+							</tr>
+							<tr>
+								<td class="count">
+									<input type="checkbox" class="checkbox" name="index[]" value="40">
+									<img src="Arrangement-in-the-gray-and-black.jpg" alt="" class="painting-pic">
+								</td>
+								<td>Arrangement in the Gray and Black</td>
+								<td>Whistler James, Abbott</td>
+								<td>1871</td>
+								<td>Realism</td>
+								<td>
+									<button><a href="#"></a><img src="archive.png" alt=""></button>
+									<button><a href="#"></a><img src="edit.png" alt=""></button>
+									<button><a href="#"></a><img src="delete.png" alt=""></button>
+									<button><a href="#"></a><img src="collection.png" alt=""></button>
+								</td>
+							</tr>
+							<tr>
+								<td class="count">
+									<input type="checkbox" class="checkbox" name="index[]" value="50">
+									<img src="Mademoiselle-Caroline-Riviere.jpg" alt="" class="painting-pic">
+								</td>
+								<td>Mademoiselle Caroline Riviere</td>
+								<td>Ingres, Jean-Auguste</td>
+								<td>1806</td>
+								<td>Neo-Classism</td>
+								<td>
+									<button><a href="#"></a><img src="archive.png" alt=""></button>
+									<button><a href="#"></a><img src="edit.png" alt=""></button>
+									<button><a href="#"></a><img src="delete.png" alt=""></button>
+									<button><a href="#"></a><img src="collection.png" alt=""></button>
+								</td>
+							</tr>
+						</tbody>
+					</table>			
+				</div>
+			</fieldset>
+		</form>
+
+	</div>
+</body>
+</html>
