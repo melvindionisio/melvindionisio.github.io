@@ -1,0 +1,206 @@
+/* MELVIN DIONISIO */
+
+* {
+	margin:  0;
+	padding:  0;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+}
+body {
+	overflow-x: hidden;
+	padding-bottom: 100px;
+}
+
+
+/* First Layout */
+
+.first--page {
+	height: 100vh;
+	width: 100vw;
+	position: relative;
+}
+#banner {
+	object-fit: cover;
+	height: 100%;
+	width:  100%;
+	filter: brightness(50%);
+}
+.landing--page-text {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: white;
+	text-align: center;
+	width: 100%;
+}
+.landing--page-text h1 {
+	font-size: 55px;
+}
+.landing--page-text h2 {
+	color: lightgray;
+	font-weight: 100;
+}
+#main-btn {
+	background-color: transparent;
+	border: 1px solid lightgray;
+	border-radius: 3px;
+	color: white;
+	margin-top: 15px;
+	font-size: 20px;
+	padding: 1rem 2.5rem;
+	outline: none;
+	transition: background-color 250ms ease-in, transform 200ms ease-in-out;
+	text-transform: uppercase;
+	letter-spacing: 4px;
+	box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .8);
+	font-weight: bold;
+}
+#main-btn:hover {
+	background-color: rgba(255, 170, 77, .5);
+}
+#main-btn:active {
+	transform: scale(1.05);
+}
+
+/* SECOND LAYOUT */
+
+.painters {
+	margin-top: 30px;
+	padding: 0 90px;
+	width: 100%;
+	height: 250px;
+}
+.painters h3{
+	font-size: 30px;
+}
+
+.author--container {
+	margin-top: 20px;
+}
+.author-img-container {
+	height: 150px;
+	width: 150px;
+	margin-right: 10px;
+}
+.authors {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+.author-cont {
+	width: 50%;
+}
+.author-cont:nth-child(1) {	
+	float: left;
+}
+.author-cont:nth-child(2) {
+	float: right;
+}
+#author1, #author2 {
+	float: left;
+}
+.author-cont > a {
+	float:  right;
+	text-decoration: none;
+	color: white;
+	background-color: orange;
+	padding: .5rem 1rem;
+	margin-right: 35px;
+	margin-top: 15px;
+	border-radius: 2px;
+	text-transform: uppercase;
+	font-family: arial;
+	font-weight: bold;
+	transition:  180ms ease-in;
+}
+.author-cont > a:hover {
+	background-color: transparent;
+	color: orange;
+	box-shadow: 0 0 0 1px orange;
+	transform: translateY(-4px);
+}
+.author-cont > a:active {
+	transform: scale(1.1);
+}
+
+
+/* THIRD LAYOUT */
+
+.mosaic {
+	width: 100%;
+	height: 100%;
+	height: 1000px;
+	position: relative;
+}
+.container {
+	width: 1170px;
+	height: 990px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+#a, #j {
+	width: 580px;
+	height: 390px;
+	position: absolute;
+}
+#a {
+	top: 0;
+	left: 0;
+}
+#b, #c, #f, #g, #i, #k{
+	height: 190px;
+	width: 285px;
+	position: absolute;
+}
+#b {
+	top: 0;
+	left: 590px;
+}
+#c {
+	top: 200px;
+	left: 590px;
+}
+#e, #d, #h {
+	height: 390px;
+	width: 285px;
+	position: absolute;
+}
+#d {
+	top: 0;
+	right: 0;
+}
+#e {
+	top: 400px;
+	left: 0;
+}
+#h{
+	top: 400px;
+	right: 0;
+}
+#f {
+	top: 400px;
+	left: 295px;
+}
+#g {
+	left: 590px;
+	top: 400px;
+}
+#i {
+	bottom: 0;
+}
+#k {
+	bottom: 0;
+	right: 0;
+}
+#j {
+	bottom: 0;
+	left: 295px;
+}
+.mosaic-img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
