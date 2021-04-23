@@ -648,7 +648,7 @@ video {
 }
 #overlay {
   position: fixed;
-  top: -100%;
+  top: -120%;
   transition: top 350ms ease-in;
 }
 #overlay.close {
